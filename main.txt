@@ -1,0 +1,153 @@
+https://supabase.thevotum.com/ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNzE3OTU3ODAwLAogICJleHAiOiAxODc1NzI0MjAwCn0.XrCbkNQDLY0fvtqJ7ZHdimDSihI7sRfbqtIjqOXgrNg
+URL: https://supabase.thevotum.com/
+Key: eyJhb...XgrNg
+https://www.linkedin.com/jobs/search/?currentJobId=3555162466&f_TPR=r604800&geoId=91000007&keywords=React.js&location=India&sortBy=DD
+Item count 0
+Processing page at index 0
+Found 9 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items after scrolling
+Found 15 items
+Job ID 4177412625 exists: False
+Title: Associate Technical Project Manager (Java / Python) 
+Company response: data=[] count=None
+Company: 
+Location: Bengaluru, Karnataka, India
+Company LinkedIn URL: https://www.linkedin.com/company/infrrd/life
+Company exists: False
+About tab opened
+Company Details: {
+    "Website": "https://www.infrrd.ai",
+    "Phone": "+1 (844) 446-3773\nPhone number is +1 (844) 446-3773",
+    "Verified page": "June 1, 2024",
+    "Industry": "Technology, Information and Internet",
+    "Company size": "201-500 employees",
+    "Headquarters": "San Jose, California",
+    "Founded": "2016",
+    "Specialties": "Robotic Process Automation , Natural Language Processing, Image Classification, Data Extraction, OCR, Machine Learning, Artificial Intelligence, Intelligent Data Capture, Intelligent Document Processing, Intelligent Data Processing, Mortgage Automation, Invoice Automation, Mortgage QC Automation, Insurance Automation , Document Automation, and Engineering Diagrams Data Extraction"
+}
+Company Domain: https://www.infrrd.ai/
+Role Metadata: {"posted_at": "2 minutes ago", "applicants": "0 people clicked apply"}
+Hiring Manager: None
+Job ID 4178126773 exists: False
+Title: Co-Chair
+Company response: data=[] count=None
+Company: 
+Location: Canada
+Company LinkedIn URL: https://www.linkedin.com/company/canadian-influencers-content-creators-association/life
+Company exists: False
+About tab opened
+Company Details: {
+    "Website": "Canadianinfluencersassociation.org",
+    "Phone": "18884138550\nPhone number is 18884138550",
+    "Industry": "Industry Associations",
+    "Company size": "2-10 employees",
+    "Founded": "2025"
+}
+Company Domain: https://canadianinfluencersassociation.org/
+Role Metadata: {"posted_at": "3 minutes ago", "applicants": "0 applicants"}
+Hiring Manager: Gen Beaudry’s profile
+Job ID 4178131134 exists: False
+Title: Remote Sensing Business Development Specialist
+Company response: data=[] count=None
+Company: 
+Location: Pasig, National Capital Region, Philippines
+Company LinkedIn URL: https://www.linkedin.com/company/geospectrum-ph/life
+Company exists: False
+About tab opened
+Company Details: {
+    "Website": "https://www.geospectrum.com.ph/",
+    "Phone": "0927-808-7953\nPhone number is 0927-808-7953",
+    "Industry": "Defense and Space Manufacturing",
+    "Company size": "11-50 employees",
+    "Headquarters": "Pasig, National Capital Region",
+    "Founded": "2014",
+    "Specialties": "Satellite Imagery, Remote Sensing, Digitization, and Geospatial Analytics"
+}
+Company Domain: https://www.geospectrum.com.ph/
+Role Metadata: {"posted_at": "4 minutes ago", "applicants": "0 applicants"}
+Hiring Manager: Jianna Iza Medillo’s verified profile
+Job ID 4177411755 exists: False
+Title: Franchise Business Analyst
+Company response: data=[] count=None
+Company: 
+Location: Bengaluru, Karnataka, India
+Company LinkedIn URL: https://www.linkedin.com/company/sparkleminds/life
+Company exists: False
+About tab opened
+Company Details: {
+    "Website": "https://www.sparkleminds.com/",
+    "Phone": "+91 9844441300\nPhone number is +91 9844441300",
+    "Industry": "Business Consulting and Services",
+    "Company size": "11-50 employees",
+    "Headquarters": "Bangalore, Karnataka",
+    "Founded": "1998",
+    "Specialties": "Franchising, Franchise, Franchise Consulting, Franchise Consultancy, Franchise Development, Franchise Training, Franchise Agreement, Franchise Manuals, International Franchising, How To Franchise In India, Master Franchise, Franchise Your Business, Franchise Marketing, and International franchising"
+}
+Company Domain: https://www.sparkleminds.com/
+Role Metadata: {"posted_at": "5 minutes ago", "applicants": "1 applicant"}
+Hiring Manager: Amit Nahar’s verified profile
+Job ID 4178127748 exists: False
+Title: Engineering Manager (high-growth eCommerce Marketplace) 
+Company response: data=[] count=None
+Company: 
+Location: New York City Metropolitan Area
+Company LinkedIn URL: https://www.linkedin.com/company/reebelo/life
+Company exists: False
+About tab opened
+Company Details: {
+    "Website": "https://www.reebelo.com",
+    "Verified page": "September 12, 2023",
+    "Industry": "Internet Marketplace Platforms",
+    "Company size": "51-200 employees",
+    "Headquarters": "San Mateo, California",
+    "Founded": "2019"
+}
+Company Domain: https://www.reebelo.com/
+Role Metadata: {"posted_at": "5 minutes ago", "applicants": "0 applicants"}
+Hiring Manager: None
+Job ID 4178124778 exists: False
+Title: Engineer/Senior Engineer (Transit Shelter Engineering Dept) 
+Company response: data=[] count=None
+Company: 
+Location: Singapore, Singapore
+Company LinkedIn URL: https://www.linkedin.com/company/bcasingapore/life
+Company exists: False
+About tab opened
+Error extracting company details: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110714790>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Company Details: {}
+Company Domain: http://www1.bca.gov.sg/
+Error processing job 4178124778: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110725990>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.290/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110739bd0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.291/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110715890>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.292/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110705ad0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.308/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11072dfd0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.309/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110750c10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.310/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11071ef90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.311/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1107059d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.312/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110727610>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Error processing item: HTTPConnectionPool(host='localhost', port=55790): Max retries exceeded with url: /session/f7700213e3d18a242d861cbf02d2a0c8/element/f.0856F18C33796D83DF6C290C95A66C3C.d.523C65A1E3B07705044E56813C9657AD.e.313/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11072ec50>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Moving to next page
+Item count 25
+Processing page at index 25
+Item count 0
+Processing page at index 0
+Item count 0
+Processing page at index 0
+Item count 0
+Processing page at index 0
+Item count 0
+Processing page at index 0
+Item count 0
+Processing page at index 0
+Item count 0
+Processing page at index 0
