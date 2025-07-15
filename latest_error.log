@@ -1,0 +1,437 @@
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ Chrome profile permissions OK
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'CrashpadMetrics.pma', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile']
+❌ Failed to launch Chrome: Message: session not created
+from timeout: Timed out receiving message from renderer: 60.000
+Stacktrace:
+0   chromedriver                        0x000000010147ce6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000101474d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000100fc63ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000100fb1200 cxxbridge1$string$len + 4140
+4   chromedriver                        0x0000000100faed30 chromedriver + 191792
+5   chromedriver                        0x0000000100faf8c0 chromedriver + 194752
+6   chromedriver                        0x0000000100ff8ab8 cxxbridge1$string$len + 297188
+7   chromedriver                        0x0000000100ff6620 cxxbridge1$string$len + 287820
+8   chromedriver                        0x000000010103ab58 cxxbridge1$string$len + 567684
+9   chromedriver                        0x000000010103a40c cxxbridge1$string$len + 565816
+10  chromedriver                        0x0000000101001834 cxxbridge1$string$len + 333408
+11  chromedriver                        0x000000010143ff88 cxxbridge1$str$ptr + 2473268
+12  chromedriver                        0x00000001014431f4 cxxbridge1$str$ptr + 2486176
+13  chromedriver                        0x00000001014219d0 cxxbridge1$str$ptr + 2348924
+14  chromedriver                        0x0000000101443ab0 cxxbridge1$str$ptr + 2488412
+15  chromedriver                        0x0000000101412a60 cxxbridge1$str$ptr + 2287628
+16  chromedriver                        0x00000001014639a0 cxxbridge1$str$ptr + 2619212
+17  chromedriver                        0x0000000101463b2c cxxbridge1$str$ptr + 2619608
+18  chromedriver                        0x00000001014749b0 cxxbridge1$str$ptr + 2688860
+19  libsystem_pthread.dylib             0x0000000185912c0c _pthread_start + 136
+20  libsystem_pthread.dylib             0x000000018590db80 thread_start + 8
+
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % pgrep chrome
+1424
+64706
+95165
+95358
+95473
+95882
+95990
+96069
+96325
+96776
+97085
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % killall 
+usage: killall [-delmsqvz] [-help] [-I]
+               [-u user] [-t tty] [-c cmd] [-SIGNAL] [cmd]...
+At least one option or argument to specify processes must be given.
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % killall chrome      
+No matching processes belonging to you were found
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % killall -9 Chrome
+No matching processes belonging to you were found
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % killall -9 chrome
+No matching processes belonging to you were found
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % pgrep chrome        
+1424
+64706
+95165
+95358
+95473
+95882
+95990
+96069
+96325
+96776
+97085
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % kill -9 1424
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % pgrep chrome
+64706
+95165
+95358
+95473
+95882
+95990
+96069
+96325
+96776
+97085
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % pkill -f "chrome|Google Chrome"
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % pgrep chrome                   
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py           
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ Chrome profile permissions OK
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile']
+^C❌ Failed to launch Chrome: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+Traceback (most recent call last):
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tejasw/Downloads/lamarr-lead-generator/final_main.py", line 796, in <module>
+    asyncio.run(main())
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+^C
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ Chrome profile permissions OK
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'RunningChromeVersion', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'SingletonSocket', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'SingletonCookie', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile', 'SingletonLock']
+❌ Failed to launch Chrome: Message: session not created
+from chrome not reachable
+Stacktrace:
+0   chromedriver                        0x0000000100674e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x000000010066cd74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x00000001001be260 cxxbridge1$string$len + 90252
+3   chromedriver                        0x00000001001ac7f0 cxxbridge1$string$len + 17948
+4   chromedriver                        0x00000001001f59bc cxxbridge1$string$len + 317416
+5   chromedriver                        0x00000001001f16f8 cxxbridge1$string$len + 300324
+6   chromedriver                        0x00000001001ee620 cxxbridge1$string$len + 287820
+7   chromedriver                        0x0000000100232b58 cxxbridge1$string$len + 567684
+8   chromedriver                        0x000000010023240c cxxbridge1$string$len + 565816
+9   chromedriver                        0x00000001001f9834 cxxbridge1$string$len + 333408
+10  chromedriver                        0x0000000100637f88 cxxbridge1$str$ptr + 2473268
+11  chromedriver                        0x000000010063b1f4 cxxbridge1$str$ptr + 2486176
+12  chromedriver                        0x00000001006199d0 cxxbridge1$str$ptr + 2348924
+13  chromedriver                        0x000000010063bab0 cxxbridge1$str$ptr + 2488412
+14  chromedriver                        0x000000010060aa60 cxxbridge1$str$ptr + 2287628
+15  chromedriver                        0x000000010065b9a0 cxxbridge1$str$ptr + 2619212
+16  chromedriver                        0x000000010065bb2c cxxbridge1$str$ptr + 2619608
+17  chromedriver                        0x000000010066c9b0 cxxbridge1$str$ptr + 2688860
+18  libsystem_pthread.dylib             0x0000000185912c0c _pthread_start + 136
+19  libsystem_pthread.dylib             0x000000018590db80 thread_start + 8
+
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ Chrome profile permissions OK
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile']
+^C❌ Failed to launch Chrome: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+Traceback (most recent call last):
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tejasw/Downloads/lamarr-lead-generator/final_main.py", line 796, in <module>
+    asyncio.run(main())
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile']
+❌ Failed to launch Chrome: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+0   chromedriver                        0x0000000100754e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x000000010074cd74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x000000010029e3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x00000001002d1d58 cxxbridge1$string$len + 301956
+4   chromedriver                        0x00000001002ce620 cxxbridge1$string$len + 287820
+5   chromedriver                        0x0000000100312b58 cxxbridge1$string$len + 567684
+6   chromedriver                        0x000000010031240c cxxbridge1$string$len + 565816
+7   chromedriver                        0x00000001002d9834 cxxbridge1$string$len + 333408
+8   chromedriver                        0x0000000100717f88 cxxbridge1$str$ptr + 2473268
+9   chromedriver                        0x000000010071b1f4 cxxbridge1$str$ptr + 2486176
+10  chromedriver                        0x00000001006f99d0 cxxbridge1$str$ptr + 2348924
+11  chromedriver                        0x000000010071bab0 cxxbridge1$str$ptr + 2488412
+12  chromedriver                        0x00000001006eaa60 cxxbridge1$str$ptr + 2287628
+13  chromedriver                        0x000000010073b9a0 cxxbridge1$str$ptr + 2619212
+14  chromedriver                        0x000000010073bb2c cxxbridge1$str$ptr + 2619608
+15  chromedriver                        0x000000010074c9b0 cxxbridge1$str$ptr + 2688860
+16  libsystem_pthread.dylib             0x0000000185912c0c _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000018590db80 thread_start + 8
+
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'Profile 9', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'RunningChromeVersion', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'SingletonSocket', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'SingletonCookie', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile', 'SingletonLock', 'Profile\\ 1']
+❌ Failed to launch Chrome: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+0   chromedriver                        0x0000000100c24e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000100c1cd74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x000000010076e3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x00000001007a1d58 cxxbridge1$string$len + 301956
+4   chromedriver                        0x000000010079e620 cxxbridge1$string$len + 287820
+5   chromedriver                        0x00000001007e2b58 cxxbridge1$string$len + 567684
+6   chromedriver                        0x00000001007e240c cxxbridge1$string$len + 565816
+7   chromedriver                        0x00000001007a9834 cxxbridge1$string$len + 333408
+8   chromedriver                        0x0000000100be7f88 cxxbridge1$str$ptr + 2473268
+9   chromedriver                        0x0000000100beb1f4 cxxbridge1$str$ptr + 2486176
+10  chromedriver                        0x0000000100bc99d0 cxxbridge1$str$ptr + 2348924
+11  chromedriver                        0x0000000100bebab0 cxxbridge1$str$ptr + 2488412
+12  chromedriver                        0x0000000100bbaa60 cxxbridge1$str$ptr + 2287628
+13  chromedriver                        0x0000000100c0b9a0 cxxbridge1$str$ptr + 2619212
+14  chromedriver                        0x0000000100c0bb2c cxxbridge1$str$ptr + 2619608
+15  chromedriver                        0x0000000100c1c9b0 cxxbridge1$str$ptr + 2688860
+16  libsystem_pthread.dylib             0x0000000185912c0c _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000018590db80 thread_start + 8
+
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'Profile 9', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'CrashpadMetrics.pma', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile', 'Profile\\ 1']
+^C❌ Failed to launch Chrome: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+Traceback (most recent call last):
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tejasw/Downloads/lamarr-lead-generator/final_main.py", line 796, in <module>
+    asyncio.run(main())
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/Users/tejasw/.pyenv/versions/3.11.4/lib/python3.11/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % 
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ Chrome profile permissions OK
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'Scraping', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'Profile 9', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile', 'Profile\\ 1']
+❌ Failed to launch Chrome: Message: session not created
+from chrome not reachable
+Stacktrace:
+0   chromedriver                        0x0000000102650e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000102648d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x000000010219a260 cxxbridge1$string$len + 90252
+3   chromedriver                        0x00000001021887f0 cxxbridge1$string$len + 17948
+4   chromedriver                        0x00000001021d19bc cxxbridge1$string$len + 317416
+5   chromedriver                        0x00000001021cd6f8 cxxbridge1$string$len + 300324
+6   chromedriver                        0x00000001021ca620 cxxbridge1$string$len + 287820
+7   chromedriver                        0x000000010220eb58 cxxbridge1$string$len + 567684
+8   chromedriver                        0x000000010220e40c cxxbridge1$string$len + 565816
+9   chromedriver                        0x00000001021d5834 cxxbridge1$string$len + 333408
+10  chromedriver                        0x0000000102613f88 cxxbridge1$str$ptr + 2473268
+11  chromedriver                        0x00000001026171f4 cxxbridge1$str$ptr + 2486176
+12  chromedriver                        0x00000001025f59d0 cxxbridge1$str$ptr + 2348924
+13  chromedriver                        0x0000000102617ab0 cxxbridge1$str$ptr + 2488412
+14  chromedriver                        0x00000001025e6a60 cxxbridge1$str$ptr + 2287628
+15  chromedriver                        0x00000001026379a0 cxxbridge1$str$ptr + 2619212
+16  chromedriver                        0x0000000102637b2c cxxbridge1$str$ptr + 2619608
+17  chromedriver                        0x00000001026489b0 cxxbridge1$str$ptr + 2688860
+18  libsystem_pthread.dylib             0x0000000185912c0c _pthread_start + 136
+19  libsystem_pthread.dylib             0x000000018590db80 thread_start + 8
+
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % pkill -f "chrome|Google Chrome"
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py           
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ Chrome profile permissions OK
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'Scraping', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'Profile 9', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile', 'Profile\\ 1']
+❌ Failed to launch Chrome: Message: session not created
+from chrome not reachable
+Stacktrace:
+0   chromedriver                        0x00000001026ece6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x00000001026e4d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000102236260 cxxbridge1$string$len + 90252
+3   chromedriver                        0x00000001022247f0 cxxbridge1$string$len + 17948
+4   chromedriver                        0x000000010226d9bc cxxbridge1$string$len + 317416
+5   chromedriver                        0x00000001022696f8 cxxbridge1$string$len + 300324
+6   chromedriver                        0x0000000102266620 cxxbridge1$string$len + 287820
+7   chromedriver                        0x00000001022aab58 cxxbridge1$string$len + 567684
+8   chromedriver                        0x00000001022aa40c cxxbridge1$string$len + 565816
+9   chromedriver                        0x0000000102271834 cxxbridge1$string$len + 333408
+10  chromedriver                        0x00000001026aff88 cxxbridge1$str$ptr + 2473268
+11  chromedriver                        0x00000001026b31f4 cxxbridge1$str$ptr + 2486176
+12  chromedriver                        0x00000001026919d0 cxxbridge1$str$ptr + 2348924
+13  chromedriver                        0x00000001026b3ab0 cxxbridge1$str$ptr + 2488412
+14  chromedriver                        0x0000000102682a60 cxxbridge1$str$ptr + 2287628
+15  chromedriver                        0x00000001026d39a0 cxxbridge1$str$ptr + 2619212
+16  chromedriver                        0x00000001026d3b2c cxxbridge1$str$ptr + 2619608
+17  chromedriver                        0x00000001026e49b0 cxxbridge1$str$ptr + 2688860
+18  libsystem_pthread.dylib             0x0000000185912c0c _pthread_start + 136
+19  libsystem_pthread.dylib             0x000000018590db80 thread_start + 8
+
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % python final_main.py
+🚀 Starting LinkedIn Lead Generator for macOS
+==================================================
+🍎 Running on macOS - performing system checks...
+✅ Chrome profile directory found: /Users/tejasw/Library/Application Support/Google/Chrome/
+✅ Chrome profile permissions OK
+✅ macOS requirements check completed
+
+🔧 Setting up Chrome driver...
+['OptimizationGuidePredictionModels', 'ChromeFeatureState', 'NativeMessagingHosts', 'Scraping', 'First Run', 'Safe Browsing', 'Safe Browsing Cookies-journal', 'BrowserMetrics', 'GrShaderCache', 'Last Version', '.DS_Store', 'AutofillStates', 'persisted_first_party_sets.json', 'TpcdMetadata', 'PrivacySandboxAttestationsPreloaded', 'first_party_sets.db', 'OpenCookieDatabase', 'Crashpad', 'Snapshots', 'Profile 9', 'CertificateRevocation', 'OnDeviceHeadSuggestModel', 'Variations', 'Profile 8', 'Profile 1', 'Safe Browsing Cookies', 'FirstPartySetsPreloaded', 'SSLErrorAssistant', 'ShaderCache', 'CookieReadinessList', 'Consent To Send Stats', 'Default', 'ZxcvbnData', 'DeferredBrowserMetrics', 'first_party_sets.db-journal', 'External Extensions', 'SafetyTips', 'OriginTrials', 'Webstore Downloads', 'MEIPreload', 'FileTypePolicies', 'AutofillRegex', 'Local State', 'GraphiteDawnCache', 'segmentation_platform', 'component_crx_cache', 'ClientSidePhishing', 'Person1', 'extensions_crx_cache', 'RecoveryImproved', 'AmountExtractionHeuristicRegexes', 'Profile 4', 'CrashpadMetrics-active.pma', 'Profile 3', 'Subresource Filter', 'ProbabilisticRevealTokenRegistry', 'WidevineCdm', 'System Profile', 'Crowd Deny', 'Profile 5', 'PKIMetadata', 'Floc', 'chrome_debug.log', 'OptimizationHints', 'TrustTokenKeyCommitments', 'optimization_guide_model_store', 'Guest Profile', 'Profile\\ 1']
+❌ Failed to launch Chrome: Message: session not created
+from chrome not reachable
+Stacktrace:
+0   chromedriver                        0x0000000100f20e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x0000000100f18d74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x0000000100a6a260 cxxbridge1$string$len + 90252
+3   chromedriver                        0x0000000100a587f0 cxxbridge1$string$len + 17948
+4   chromedriver                        0x0000000100aa19bc cxxbridge1$string$len + 317416
+5   chromedriver                        0x0000000100a9d6f8 cxxbridge1$string$len + 300324
+6   chromedriver                        0x0000000100a9a620 cxxbridge1$string$len + 287820
+7   chromedriver                        0x0000000100adeb58 cxxbridge1$string$len + 567684
+8   chromedriver                        0x0000000100ade40c cxxbridge1$string$len + 565816
+9   chromedriver                        0x0000000100aa5834 cxxbridge1$string$len + 333408
+10  chromedriver                        0x0000000100ee3f88 cxxbridge1$str$ptr + 2473268
+11  chromedriver                        0x0000000100ee71f4 cxxbridge1$str$ptr + 2486176
+12  chromedriver                        0x0000000100ec59d0 cxxbridge1$str$ptr + 2348924
+13  chromedriver                        0x0000000100ee7ab0 cxxbridge1$str$ptr + 2488412
+14  chromedriver                        0x0000000100eb6a60 cxxbridge1$str$ptr + 2287628
+15  chromedriver                        0x0000000100f079a0 cxxbridge1$str$ptr + 2619212
+16  chromedriver                        0x0000000100f07b2c cxxbridge1$str$ptr + 2619608
+17  chromedriver                        0x0000000100f189b0 cxxbridge1$str$ptr + 2688860
+18  libsystem_pthread.dylib             0x0000000185912c0c _pthread_start + 136
+19  libsystem_pthread.dylib             0x000000018590db80 thread_start + 8
+
+💡 Troubleshooting tips for macOS:
+   - Ensure Google Chrome is installed in /Applications/
+   - Try running: brew install --cask google-chrome
+   - Check Chrome permissions in System Preferences > Security & Privacy
+   - Close all Chrome instances before running the script
+❌ Failed to setup Chrome driver. Exiting...
+tejasw@Tejasws-MacBook-Pro lamarr-lead-generator % 
