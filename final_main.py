@@ -41,15 +41,10 @@ IS_MACOS = platform.system() == "Darwin"
 
 # macOS Chrome profile configuration
 if IS_MACOS:
-    CHROME_USER_DATA_DIR = os.path.expanduser(
-        "~/Library/Application Support/Google/Chrome/"
-    )
-    DEFAULT_PROFILE = "Default"
+    CHROME_USER_DATA_DIR = "/Users/tejasw/Library/Application Support/Google/Chrome/"
+    DEFAULT_PROFILE = "Profile 9"
     # Check if Chrome is installed in standard macOS locations
-    CHROME_BINARY_PATHS = [
-        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-        "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
-    ]
+    CHROME_BINARY_PATHS = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 else:
     # Fallback for other systems
     CHROME_USER_DATA_DIR = None
@@ -62,10 +57,7 @@ def find_chrome_binary():
     if not IS_MACOS:
         return None
 
-    for path in CHROME_BINARY_PATHS:
-        if os.path.exists(path):
-            return path
-    return None
+    return CHROME_BINARY_PATHS
 
 
 def setup_driver():
@@ -76,46 +68,20 @@ def setup_driver():
     if IS_MACOS:
         # Use macOS Chrome profile path
         if os.path.exists(CHROME_USER_DATA_DIR):
+            print(os.listdir(CHROME_USER_DATA_DIR))
             options.add_argument(f"--user-data-dir={CHROME_USER_DATA_DIR}")
             options.add_argument(f"--profile-directory={DEFAULT_PROFILE}")
+            options.add_argument("--remote-debugging-port=9222")
 
         # Find Chrome binary
         chrome_binary = find_chrome_binary()
         if chrome_binary:
             options.binary_location = chrome_binary
-            print(f"✅ Using Chrome binary: {chrome_binary}")
+        #     print(f"✅ Using Chrome binary: {chrome_binary}")
 
         # macOS-specific optimizations
-        options.add_argument("--disable-gpu")  # Recommended for macOS
-        options.add_argument("--no-sandbox")  # Required for macOS in some cases
-        options.add_argument(
-            "--disable-dev-shm-usage"
-        )  # Overcome limited resource problems
-        options.add_argument("--disable-software-rasterizer")
-        options.add_argument("--disable-background-timer-throttling")
-        options.add_argument("--disable-backgrounding-occluded-windows")
-        options.add_argument("--disable-renderer-backgrounding")
-
-        # Prevent macOS-specific issues
-        options.add_argument("--disable-extensions-except=")
-        options.add_argument("--disable-extensions")
-        options.add_argument("--disable-plugins-discovery")
-
-    # General Chrome options
-    options.add_argument("--start-maximized")
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option("useAutomationExtension", False)
-
-    # Additional stealth options
-    options.add_argument("--disable-web-security")
-    options.add_argument("--allow-running-insecure-content")
-    options.add_argument("--disable-features=VizDisplayCompositor")
-
-    # User agent to avoid detection
-    options.add_argument(
-        "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    )
+        # options.add_argument("--disable-gpu")  # Recommended for macOS
+        # options.add_argument("--no-sandbox")  # Required for macOS in some cases
 
     # Set up Chrome service with automatic driver management
     try:
@@ -124,11 +90,6 @@ def setup_driver():
 
         # Create driver instance
         driver = webdriver.Chrome(service=service, options=options)
-
-        # Execute stealth script to hide automation
-        driver.execute_script(
-            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
-        )
 
         print("✅ Chrome driver setup successful")
         return driver
