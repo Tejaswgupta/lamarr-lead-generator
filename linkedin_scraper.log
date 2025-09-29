@@ -1,0 +1,419 @@
+2025-09-22 10:38:53,803 - INFO - Starting LinkedIn Lead Generator
+2025-09-22 10:38:53,808 - ERROR - Database connection failed: Multiple exceptions: [Errno 61] Connect call failed ('::1', 5432, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 5432)
+2025-09-22 10:38:53,808 - ERROR - Database setup failed, exiting
+2025-09-22 11:14:10,859 - INFO - Starting LinkedIn Lead Generator
+2025-09-22 11:14:10,865 - ERROR - Database connection failed: Multiple exceptions: [Errno 61] Connect call failed ('::1', 5432, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 5432)
+2025-09-22 11:14:10,865 - ERROR - Database setup failed, exiting
+2025-09-23 12:48:58,370 - INFO - Starting LinkedIn Lead Generator
+2025-09-23 12:49:00,406 - ERROR - Database connection failed: database "lead_generator" does not exist
+2025-09-23 12:49:00,406 - ERROR - Database setup failed, exiting
+2025-09-23 12:50:13,169 - INFO - Starting LinkedIn Lead Generator
+2025-09-23 12:50:13,209 - INFO - Database tables created successfully
+2025-09-23 12:50:13,412 - WARNING - There was an error managing chrome (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json): error trying to connect: dns error: failed to lookup address information: nodename nor servname provided, or not known); using driver found in the cache
+2025-09-23 12:51:59,663 - INFO - Starting LinkedIn Lead Generator
+2025-09-23 12:51:59,700 - INFO - Database tables created successfully
+2025-09-23 12:51:59,756 - WARNING - There was an error managing chrome (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json): error trying to connect: dns error: failed to lookup address information: nodename nor servname provided, or not known); using driver found in the cache
+2025-09-23 12:54:46,269 - INFO - Starting LinkedIn Lead Generator
+2025-09-23 12:54:46,316 - INFO - Database tables created successfully
+2025-09-23 12:54:50,275 - INFO - Starting LinkedIn login
+2025-09-23 12:55:03,188 - INFO - LinkedIn login completed
+2025-09-23 12:55:03,221 - INFO - Processing URL: https://www.linkedin.com/jobs/search/?currentJobId=3843718022&f_TPR=r86400&geoId=92000000&keywords=generative%20ai&location=Worldwide&origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&refresh=true&sortBy=DD
+2025-09-23 12:55:03,221 - INFO - Processing page at index 0
+2025-09-23 12:55:08,596 - INFO - Found 10 items after scrolling
+2025-09-23 12:55:10,620 - INFO - Found 13 items after scrolling
+2025-09-23 12:55:12,650 - INFO - Found 16 items after scrolling
+2025-09-23 12:55:14,674 - INFO - Found 20 items after scrolling
+2025-09-23 12:55:16,696 - INFO - Found 23 items after scrolling
+2025-09-23 12:55:18,727 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:20,755 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:22,784 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:24,808 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:26,831 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:28,859 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:30,880 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:32,900 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:34,924 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:36,944 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:38,967 - INFO - Found 25 items after scrolling
+2025-09-23 12:55:38,967 - INFO - Found 25 job items
+2025-09-23 12:55:41,218 - INFO - Processing job ID: 4295889663
+2025-09-23 12:55:41,244 - INFO - Job title: AI Developer
+2025-09-23 12:55:41,268 - INFO - Company: , Location: Türkiye
+2025-09-23 12:55:45,517 - INFO - Extracting company domain and details
+2025-09-23 12:55:45,641 - INFO - Company domain: http://www.lyrebirdstudio.net/
+2025-09-23 12:55:45,769 - INFO - Hiring Manager: Selma Tuncay Nirgiz’s profile
+2025-09-23 12:55:45,870 - INFO - Successfully inserted job 4295889663 for company 
+2025-09-23 12:55:45,873 - INFO - Successfully processed job 4295889663 in 4.66 seconds
+2025-09-23 12:55:48,027 - INFO - Processing job ID: 4280930626
+2025-09-23 12:55:48,046 - INFO - Job title: GenAI Agents SDET - London Stock Exchange Group
+2025-09-23 12:55:48,069 - INFO - Company: , Location: London, England, United Kingdom
+2025-09-23 12:55:52,172 - INFO - Extracting company domain and details
+2025-09-23 12:55:52,286 - INFO - Company domain: http://www.efinancialcareers.com/
+2025-09-23 12:55:52,482 - INFO - Hiring Manager: None
+2025-09-23 12:55:52,550 - INFO - Successfully inserted job 4280930626 for company 
+2025-09-23 12:55:52,551 - INFO - Successfully processed job 4280930626 in 4.52 seconds
+2025-09-23 12:55:54,682 - INFO - Processing job ID: 4303883839
+2025-09-23 12:55:54,702 - INFO - Job title: Data & AI Solutions Architect
+2025-09-23 12:55:54,721 - INFO - Company: , Location: India
+2025-09-23 12:55:58,761 - INFO - Extracting company domain and details
+2025-09-23 12:55:58,889 - INFO - Company domain: http://www.rapidqube.com/
+2025-09-23 12:55:59,043 - INFO - Hiring Manager: Rajkumar V’s verified profile
+2025-09-23 12:55:59,092 - INFO - Successfully inserted job 4303883839 for company 
+2025-09-23 12:55:59,093 - INFO - Successfully processed job 4303883839 in 4.41 seconds
+2025-09-23 12:56:01,259 - INFO - Processing job ID: 4303894580
+2025-09-23 12:56:01,279 - INFO - Job title: Senior Technology Consultant 
+2025-09-23 12:56:01,302 - INFO - Company: , Location: Bengaluru, Karnataka, India
+2025-09-23 12:56:05,681 - INFO - Extracting company domain and details
+2025-09-23 12:56:05,803 - INFO - Company domain: https://hpe.com/networking
+2025-09-23 12:56:05,882 - INFO - Hiring Manager: None
+2025-09-23 12:56:05,954 - INFO - Successfully inserted job 4303894580 for company 
+2025-09-23 12:56:05,955 - INFO - Successfully processed job 4303894580 in 4.70 seconds
+2025-09-23 12:56:08,206 - INFO - Processing job ID: 4300330637
+2025-09-23 12:56:08,227 - INFO - Job title: Data Governance 
+2025-09-23 12:56:08,256 - INFO - Company: , Location: Madrid, Community of Madrid, Spain
+2025-09-23 12:56:12,410 - INFO - Extracting company domain and details
+2025-09-23 12:56:12,557 - INFO - Company domain: http://www.capitole-consulting.com/
+2025-09-23 12:56:12,755 - INFO - Hiring Manager: Shanthal Yudewitz’s profile
+2025-09-23 12:56:12,826 - INFO - Successfully inserted job 4300330637 for company 
+2025-09-23 12:56:12,827 - INFO - Successfully processed job 4300330637 in 4.62 seconds
+2025-09-23 12:56:14,981 - INFO - Processing job ID: 4302594484
+2025-09-23 12:56:15,001 - INFO - Job title: Principal Architect – GenAI & Enterprise Automation 
+2025-09-23 12:56:15,023 - INFO - Company: , Location: Bengaluru, Karnataka, India
+2025-09-23 12:56:19,583 - INFO - Extracting company domain and details
+2025-09-23 12:56:19,661 - INFO - Company domain: http://hpe.com/
+2025-09-23 12:56:19,748 - INFO - Hiring Manager: None
+2025-09-23 12:56:19,810 - INFO - Successfully inserted job 4302594484 for company 
+2025-09-23 12:56:19,811 - INFO - Successfully processed job 4302594484 in 4.83 seconds
+2025-09-23 12:56:22,052 - INFO - Processing job ID: 4304000460
+2025-09-23 12:56:22,074 - INFO - Job title: Architect 
+2025-09-23 12:56:22,100 - INFO - Company: , Location: Hyderabad, Telangana, India
+2025-09-23 12:56:26,331 - INFO - Extracting company domain and details
+2025-09-23 12:56:26,454 - INFO - Company domain: https://www.birlasoft.com/
+2025-09-23 12:56:26,543 - INFO - Hiring Manager: None
+2025-09-23 12:56:26,596 - INFO - Successfully inserted job 4304000460 for company 
+2025-09-23 12:56:26,598 - INFO - Successfully processed job 4304000460 in 4.55 seconds
+2025-09-23 12:56:28,777 - INFO - Processing job ID: 4304634578
+2025-09-23 12:56:28,797 - INFO - Job title: Senior Technical Member of Staff 
+2025-09-23 12:56:28,820 - INFO - Company: , Location: United States
+2025-09-23 12:56:33,370 - INFO - Extracting company domain and details
+2025-09-23 12:56:33,493 - INFO - Company domain: http://www.oracle.com/
+2025-09-23 12:56:33,631 - INFO - Hiring Manager: None
+2025-09-23 12:56:33,760 - INFO - Successfully inserted job 4304634578 for company 
+2025-09-23 12:56:33,761 - INFO - Successfully processed job 4304634578 in 4.98 seconds
+2025-09-23 12:56:35,896 - INFO - Processing job ID: 4304648174
+2025-09-23 12:56:35,916 - INFO - Job title: Junior Consultant 
+2025-09-23 12:56:35,944 - INFO - Company: , Location: Beijing, Beijing, China
+2025-09-23 12:56:40,058 - INFO - Extracting company domain and details
+2025-09-23 12:56:40,186 - INFO - Company domain: https://www.archetype.co/
+2025-09-23 12:56:40,274 - INFO - Hiring Manager: None
+2025-09-23 12:56:40,323 - INFO - Successfully inserted job 4304648174 for company 
+2025-09-23 12:56:40,324 - INFO - Successfully processed job 4304648174 in 4.43 seconds
+2025-09-23 12:56:42,466 - INFO - Processing job ID: 4303888781
+2025-09-23 12:56:42,486 - INFO - Job title: Online Scratch Instructor 
+2025-09-23 12:56:42,514 - INFO - Company: , Location: Karāchi, Sindh, Pakistan
+2025-09-23 12:56:46,645 - INFO - Extracting company domain and details
+2025-09-23 12:56:46,776 - INFO - Company domain: https://www.codingal.com/?utm_source=linkedin_page
+2025-09-23 12:56:46,931 - INFO - Hiring Manager: Yusra Khan’s verified profile
+2025-09-23 12:56:46,993 - INFO - Successfully inserted job 4303888781 for company 
+2025-09-23 12:56:46,994 - INFO - Successfully processed job 4303888781 in 4.53 seconds
+2025-09-23 12:56:49,114 - INFO - Processing job ID: 4304636504
+2025-09-23 12:56:49,131 - INFO - Job title: Geschäftsführer:in (80%)
+2025-09-23 12:56:49,164 - INFO - Company: , Location: Bern, Berne, Switzerland
+2025-09-23 12:56:53,080 - INFO - Extracting company domain and details
+2025-09-23 12:56:53,198 - INFO - Company domain: https://www.mqb.ch/de
+2025-09-23 12:56:53,304 - INFO - Hiring Manager: None
+2025-09-23 12:56:53,420 - INFO - Successfully inserted job 4304636504 for company 
+2025-09-23 12:56:53,421 - INFO - Successfully processed job 4304636504 in 4.31 seconds
+2025-09-23 12:56:55,559 - INFO - Processing job ID: 4303894781
+2025-09-23 12:56:55,577 - INFO - Job title: Sales Assistant | Midas David Jones Melbourne
+2025-09-23 12:56:55,601 - INFO - Company: , Location: Victoria, Australia
+2025-09-23 12:56:59,468 - INFO - Extracting company domain and details
+2025-09-23 12:56:59,579 - INFO - Company domain: https://www.munrofootweargroup.com.au/
+2025-09-23 12:56:59,685 - INFO - Hiring Manager: None
+2025-09-23 12:56:59,808 - INFO - Successfully inserted job 4303894781 for company 
+2025-09-23 12:56:59,809 - INFO - Successfully processed job 4303894781 in 4.25 seconds
+2025-09-23 12:57:01,930 - INFO - Processing job ID: 4303889755
+2025-09-23 12:57:01,948 - INFO - Job title: Head of Marketing/Marketing Director
+2025-09-23 12:57:01,969 - INFO - Company: , Location: Dubai, Dubai, United Arab Emirates
+2025-09-23 12:57:06,096 - INFO - Extracting company domain and details
+2025-09-23 12:57:16,406 - WARNING - Could not extract company domain: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010124cb38 cxxbridge1$str$ptr + 2722088
+1   chromedriver                        0x0000000101244aa8 cxxbridge1$str$ptr + 2689176
+2   chromedriver                        0x0000000100d9633c cxxbridge1$string$len + 90648
+3   chromedriver                        0x0000000100ddd494 cxxbridge1$string$len + 381808
+4   chromedriver                        0x0000000100e1e880 cxxbridge1$string$len + 649052
+5   chromedriver                        0x0000000100dd1784 cxxbridge1$string$len + 333408
+6   chromedriver                        0x000000010120feb4 cxxbridge1$str$ptr + 2473124
+7   chromedriver                        0x0000000101213120 cxxbridge1$str$ptr + 2486032
+8   chromedriver                        0x00000001011f16b4 cxxbridge1$str$ptr + 2348196
+9   chromedriver                        0x00000001012139dc cxxbridge1$str$ptr + 2488268
+10  chromedriver                        0x00000001011e2730 cxxbridge1$str$ptr + 2286880
+11  chromedriver                        0x00000001012335f8 cxxbridge1$str$ptr + 2618344
+12  chromedriver                        0x0000000101233784 cxxbridge1$str$ptr + 2618740
+13  chromedriver                        0x00000001012446e4 cxxbridge1$str$ptr + 2688212
+14  libsystem_pthread.dylib             0x00000001867b7c0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001867b2b80 thread_start + 8
+
+2025-09-23 12:57:16,523 - INFO - Hiring Manager: None
+2025-09-23 12:57:16,587 - INFO - Successfully inserted job 4303889755 for company 
+2025-09-23 12:57:16,589 - INFO - Successfully processed job 4303889755 in 14.66 seconds
+2025-09-23 12:57:18,726 - INFO - Processing job ID: 4304635587
+2025-09-23 12:57:18,748 - INFO - Job title: Ads Ecosystem Cooperation Manager 
+2025-09-23 12:57:18,770 - INFO - Company: , Location: Panama City, Panamá, Panama
+2025-09-23 12:57:23,008 - INFO - Extracting company domain and details
+2025-09-23 12:57:23,111 - INFO - Company domain: http://consumer.huawei.com/
+2025-09-23 12:57:23,207 - INFO - Hiring Manager: Wen Hui Teoh’s verified profile
+2025-09-23 12:57:23,258 - INFO - Successfully inserted job 4304635587 for company 
+2025-09-23 12:57:23,259 - INFO - Successfully processed job 4304635587 in 4.53 seconds
+2025-09-23 12:57:25,427 - INFO - Processing job ID: 4303896661
+2025-09-23 12:57:25,447 - INFO - Job title: IAM Engineer - SailPoint 
+2025-09-23 12:57:25,470 - INFO - Company: , Location: Bengaluru, Karnataka, India
+2025-09-23 12:57:29,713 - INFO - Extracting company domain and details
+2025-09-23 12:57:29,828 - INFO - Company domain: https://rbrk.co/linkedin
+2025-09-23 12:57:29,926 - INFO - Hiring Manager: None
+2025-09-23 12:57:30,051 - INFO - Successfully inserted job 4303896661 for company 
+2025-09-23 12:57:30,052 - INFO - Successfully processed job 4303896661 in 4.62 seconds
+2025-09-23 12:57:32,171 - INFO - Processing job ID: 4304629643
+2025-09-23 12:57:32,186 - INFO - Job title: Enterprise Technology Architect 
+2025-09-23 12:57:32,205 - INFO - Company: , Location: Jaipur, Rajasthan, India
+2025-09-23 12:57:36,336 - INFO - Extracting company domain and details
+2025-09-23 12:57:36,465 - INFO - Company domain: http://www.accenture.com/india
+2025-09-23 12:57:36,547 - INFO - Hiring Manager: None
+2025-09-23 12:57:36,608 - INFO - Successfully inserted job 4304629643 for company 
+2025-09-23 12:57:36,609 - INFO - Successfully processed job 4304629643 in 4.44 seconds
+2025-09-23 12:57:38,782 - INFO - Processing job ID: 4304635582
+2025-09-23 12:57:38,799 - INFO - Job title: Lead Data Scientist
+2025-09-23 12:57:38,822 - INFO - Company: , Location: Alicante, Valencian Community, Spain
+2025-09-23 12:57:42,823 - INFO - Extracting company domain and details
+2025-09-23 12:57:42,907 - INFO - Company domain: https://www.gft.com/es/es
+2025-09-23 12:57:43,001 - INFO - Hiring Manager: Ainoa G.’s verified profile
+2025-09-23 12:57:43,069 - INFO - Successfully inserted job 4304635582 for company 
+2025-09-23 12:57:43,070 - INFO - Successfully processed job 4304635582 in 4.29 seconds
+2025-09-23 12:57:45,228 - INFO - Processing job ID: 4303884697
+2025-09-23 12:57:45,249 - INFO - Job title: Website UX & Design Lead 
+2025-09-23 12:57:45,271 - INFO - Company: , Location: Stockholm, Stockholm County, Sweden
+2025-09-23 12:57:49,743 - INFO - Extracting company domain and details
+2025-09-23 12:57:49,966 - INFO - Company domain: http://www.ericsson.com/
+2025-09-23 12:57:50,053 - INFO - Hiring Manager: None
+2025-09-23 12:57:50,180 - INFO - Successfully inserted job 4303884697 for company 
+2025-09-23 12:57:50,181 - INFO - Successfully processed job 4303884697 in 4.95 seconds
+2025-09-23 12:57:52,307 - INFO - Processing job ID: 4304635579
+2025-09-23 12:57:52,326 - INFO - Job title: Data Engineer II- Marketing Science 
+2025-09-23 12:57:52,348 - INFO - Company: , Location: Bengaluru, Karnataka, India
+2025-09-23 12:58:02,802 - INFO - Extracting company domain and details
+2025-09-23 12:58:03,570 - INFO - Company domain: http://www.bookingholdings.com/
+2025-09-23 12:58:03,640 - INFO - Hiring Manager: None
+2025-09-23 12:58:03,695 - INFO - Successfully inserted job 4304635579 for company 
+2025-09-23 12:58:03,697 - INFO - Successfully processed job 4304635579 in 11.39 seconds
+2025-09-23 12:58:05,936 - INFO - Processing job ID: 4304648093
+2025-09-23 12:58:05,955 - INFO - Job title: 2026 University Graduate - User Research 
+2025-09-23 12:58:05,977 - INFO - Company: , Location: New York, NY
+2025-09-23 12:58:10,437 - INFO - Extracting company domain and details
+2025-09-23 12:58:10,574 - INFO - Company domain: http://www.adobe.com/
+2025-09-23 12:58:10,672 - INFO - Hiring Manager: None
+2025-09-23 12:58:10,731 - INFO - Successfully inserted job 4304648093 for company 
+2025-09-23 12:58:10,732 - INFO - Successfully processed job 4304648093 in 4.80 seconds
+2025-09-23 12:58:12,874 - INFO - Processing job ID: 4303893450
+2025-09-23 12:58:12,885 - INFO - Job title: Lead Software Architect 
+2025-09-23 12:58:12,899 - INFO - Company: , Location: Karnataka, India
+2025-09-23 12:58:16,895 - INFO - Extracting company domain and details
+2025-09-23 12:58:17,003 - INFO - Company domain: https://www.sclera.com/
+2025-09-23 12:58:17,230 - INFO - Hiring Manager: likitha Poojary’s verified profile
+2025-09-23 12:58:17,289 - INFO - Successfully inserted job 4303893450 for company 
+2025-09-23 12:58:17,290 - INFO - Successfully processed job 4303893450 in 4.42 seconds
+2025-09-23 12:58:19,465 - INFO - Processing job ID: 4304640471
+2025-09-23 12:58:19,474 - INFO - Job title: EY - Consulting - Financial Services - Quantitative Advisory Services – Senior, application via RippleMatch
+2025-09-23 12:58:19,488 - INFO - Company: , Location: New York, NY
+2025-09-23 12:58:24,553 - INFO - Extracting company domain and details
+2025-09-23 12:58:24,684 - INFO - Company domain: https://ripplematch.com/employers
+2025-09-23 12:58:24,762 - INFO - Hiring Manager: None
+2025-09-23 12:58:24,894 - INFO - Successfully inserted job 4304640471 for company 
+2025-09-23 12:58:24,898 - INFO - Successfully processed job 4304640471 in 5.43 seconds
+2025-09-23 12:58:27,334 - INFO - Processing job ID: 4304627600
+2025-09-23 12:58:27,344 - INFO - Job title: Adobe AEP Sr. Architect 
+2025-09-23 12:58:27,362 - INFO - Company: , Location: Ottawa, ON
+2025-09-23 12:58:31,886 - INFO - Extracting company domain and details
+2025-09-23 12:58:32,096 - INFO - Company domain: http://www.accenture.com/
+2025-09-23 12:58:32,170 - INFO - Hiring Manager: None
+2025-09-23 12:58:32,224 - INFO - Successfully inserted job 4304627600 for company 
+2025-09-23 12:58:32,226 - INFO - Successfully processed job 4304627600 in 4.89 seconds
+2025-09-23 12:58:34,413 - INFO - Processing job ID: 4304639463
+2025-09-23 12:58:34,432 - INFO - Job title: Mathematics Specialist - 34430 
+2025-09-23 12:58:34,455 - INFO - Company: , Location: India
+2025-09-23 12:58:38,609 - INFO - Extracting company domain and details
+2025-09-23 12:58:38,762 - INFO - Company domain: http://turing.com/s/wY0xCJ
+2025-09-23 12:58:38,829 - INFO - Hiring Manager: None
+2025-09-23 12:58:38,882 - INFO - Successfully inserted job 4304639463 for company 
+2025-09-23 12:58:38,883 - INFO - Successfully processed job 4304639463 in 4.47 seconds
+2025-09-23 12:58:41,150 - INFO - Processing job ID: 4289951408
+2025-09-23 12:58:41,171 - INFO - Job title: Senior Software Engineer 
+2025-09-23 12:58:41,196 - INFO - Company: , Location: Bengaluru, Karnataka, India
+2025-09-23 12:58:45,698 - INFO - Extracting company domain and details
+2025-09-23 12:58:45,808 - INFO - Company domain: http://www.maersk.com/
+2025-09-23 12:58:45,883 - INFO - Hiring Manager: None
+2025-09-23 12:58:45,942 - INFO - Successfully inserted job 4289951408 for company 
+2025-09-23 12:58:45,943 - INFO - Successfully processed job 4289951408 in 4.79 seconds
+2025-09-23 12:58:45,943 - INFO - Moving to next page
+2025-09-23 12:58:45,943 - INFO - Processing page at index 25
+2025-09-23 12:58:50,505 - INFO - Found 7 items after scrolling
+2025-09-23 12:58:52,531 - INFO - Found 7 items after scrolling
+2025-09-23 12:58:54,553 - INFO - Found 7 items after scrolling
+2025-09-23 12:58:56,574 - INFO - Found 7 items after scrolling
+2025-09-23 12:58:58,596 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:00,619 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:02,641 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:04,663 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:06,686 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:08,708 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:08,709 - INFO - Found 7 job items
+2025-09-23 12:59:10,849 - INFO - Processing job ID: 4289951408
+2025-09-23 12:59:10,857 - INFO - Job title: None
+2025-09-23 12:59:10,866 - ERROR - Could not find company link
+2025-09-23 12:59:12,997 - INFO - Processing job ID: 4302617816
+2025-09-23 12:59:13,006 - INFO - Job title: None
+2025-09-23 12:59:13,014 - ERROR - Could not find company link
+2025-09-23 12:59:15,134 - INFO - Processing job ID: 4302631589
+2025-09-23 12:59:15,143 - INFO - Job title: None
+2025-09-23 12:59:15,151 - ERROR - Could not find company link
+2025-09-23 12:59:17,231 - INFO - Processing job ID: 4302630660
+2025-09-23 12:59:17,240 - INFO - Job title: None
+2025-09-23 12:59:17,248 - ERROR - Could not find company link
+2025-09-23 12:59:19,320 - INFO - Processing job ID: 4302620798
+2025-09-23 12:59:19,329 - INFO - Job title: None
+2025-09-23 12:59:19,337 - ERROR - Could not find company link
+2025-09-23 12:59:21,449 - INFO - Processing job ID: 4302614918
+2025-09-23 12:59:21,458 - INFO - Job title: None
+2025-09-23 12:59:21,466 - ERROR - Could not find company link
+2025-09-23 12:59:23,580 - INFO - Processing job ID: 4302612905
+2025-09-23 12:59:23,589 - INFO - Job title: None
+2025-09-23 12:59:23,597 - ERROR - Could not find company link
+2025-09-23 12:59:23,597 - INFO - Moving to next page
+2025-09-23 12:59:23,597 - INFO - Processing page at index 50
+2025-09-23 12:59:28,046 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:30,060 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:32,080 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:34,103 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:36,123 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:38,146 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:40,167 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:42,189 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:44,211 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:46,232 - INFO - Found 7 items after scrolling
+2025-09-23 12:59:46,233 - INFO - Found 7 job items
+2025-09-23 12:59:48,373 - INFO - Processing job ID: 4304481655
+2025-09-23 12:59:48,382 - INFO - Job title: None
+2025-09-23 12:59:48,390 - ERROR - Could not find company link
+2025-09-23 12:59:50,513 - INFO - Processing job ID: 4303898697
+2025-09-23 12:59:50,521 - INFO - Job title: None
+2025-09-23 12:59:50,529 - ERROR - Could not find company link
+2025-09-23 12:59:52,646 - INFO - Processing job ID: 4303883534
+2025-09-23 12:59:52,655 - INFO - Job title: None
+2025-09-23 12:59:52,663 - ERROR - Could not find company link
+2025-09-23 12:59:54,737 - INFO - Processing job ID: 4303878681
+2025-09-23 12:59:54,746 - INFO - Job title: None
+2025-09-23 12:59:54,754 - ERROR - Could not find company link
+2025-09-23 12:59:56,878 - INFO - Processing job ID: 4303898693
+2025-09-23 12:59:56,886 - INFO - Job title: None
+2025-09-23 12:59:56,894 - ERROR - Could not find company link
+2025-09-23 12:59:59,014 - INFO - Processing job ID: 4304630618
+2025-09-23 12:59:59,031 - INFO - Job title: None
+2025-09-23 12:59:59,065 - ERROR - Could not find company link
+2025-09-23 13:00:02,299 - INFO - Processing job ID: 4304647268
+2025-09-23 13:00:02,321 - INFO - Job title: Lead Threat Intelligence Specialist 
+2025-09-23 13:00:02,345 - INFO - Company: , Location: Tempe, AZ
+2025-09-23 13:00:06,902 - INFO - Extracting company domain and details
+2025-09-23 13:00:07,034 - INFO - Company domain: http://adp.com/
+2025-09-23 13:00:07,209 - INFO - Hiring Manager: None
+2025-09-23 13:00:07,285 - INFO - Successfully inserted job 4304647268 for company 
+2025-09-23 13:00:07,286 - INFO - Successfully processed job 4304647268 in 4.99 seconds
+2025-09-23 13:00:07,286 - INFO - Moving to next page
+2025-09-23 13:00:07,286 - INFO - Processing page at index 75
+2025-09-23 13:00:11,578 - INFO - Found 9 items after scrolling
+2025-09-23 13:00:13,603 - INFO - Found 12 items after scrolling
+2025-09-23 13:00:15,630 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:17,656 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:19,682 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:21,705 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:23,734 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:25,759 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:27,782 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:29,806 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:31,830 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:33,851 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:35,874 - INFO - Found 15 items after scrolling
+2025-09-23 13:00:35,875 - INFO - Found 15 job items
+2025-09-23 13:00:38,240 - INFO - Processing job ID: 4304487589
+2025-09-23 13:00:38,280 - INFO - Job title: Analyst - Enterprise Control Management, Learning & Communications 
+2025-09-23 13:00:38,304 - INFO - Company: , Location: Phoenix, AZ
+2025-09-23 13:00:42,894 - INFO - Extracting company domain and details
+2025-09-23 13:00:43,032 - INFO - Company domain: https://www.americanexpress.com/
+2025-09-23 13:00:43,134 - INFO - Hiring Manager: None
+2025-09-23 13:00:43,203 - INFO - Successfully inserted job 4304487589 for company 
+2025-09-23 13:00:43,204 - INFO - Successfully processed job 4304487589 in 4.96 seconds
+2025-09-23 13:00:45,435 - INFO - Processing job ID: 4304478673
+2025-09-23 13:00:45,471 - INFO - Job title: Sales Operations Analyst 
+2025-09-23 13:00:45,503 - INFO - Company: , Location: San Diego, CA
+2025-09-23 13:00:46,082 - ERROR - Error processing job 4304478673: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-09-23 13:00:46,116 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a06790>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1745/click
+2025-09-23 13:00:46,118 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a071d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1745/click
+2025-09-23 13:00:46,123 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a07c50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1745/click
+2025-09-23 13:00:46,124 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1745/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e00710>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,127 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e01250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1746/click
+2025-09-23 13:00:46,129 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e01d10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1746/click
+2025-09-23 13:00:46,134 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e02850>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1746/click
+2025-09-23 13:00:46,137 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1746/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e03310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,139 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0c0d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1747/click
+2025-09-23 13:00:46,142 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0cd10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1747/click
+2025-09-23 13:00:46,146 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e03410>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1747/click
+2025-09-23 13:00:46,149 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1747/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e020d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,150 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e01290>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1748/click
+2025-09-23 13:00:46,151 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e006d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1748/click
+2025-09-23 13:00:46,152 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1032b60d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1748/click
+2025-09-23 13:00:46,153 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1748/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a07950>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,154 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a06cd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1749/click
+2025-09-23 13:00:46,155 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103976910>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1749/click
+2025-09-23 13:00:46,155 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103977ad0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1749/click
+2025-09-23 13:00:46,155 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1749/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103965310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,156 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103981010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1750/click
+2025-09-23 13:00:46,157 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103980ad0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1750/click
+2025-09-23 13:00:46,157 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0d150>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1750/click
+2025-09-23 13:00:46,159 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1750/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0dbd0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,164 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0e750>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1751/click
+2025-09-23 13:00:46,165 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103983950>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1751/click
+2025-09-23 13:00:46,166 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103980cd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1751/click
+2025-09-23 13:00:46,168 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1751/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103966a10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,169 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a070d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1759/click
+2025-09-23 13:00:46,170 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a07a50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1759/click
+2025-09-23 13:00:46,170 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a07810>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1759/click
+2025-09-23 13:00:46,170 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1759/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103976090>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,171 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10197a050>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1760/click
+2025-09-23 13:00:46,171 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e005d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1760/click
+2025-09-23 13:00:46,172 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e01350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1760/click
+2025-09-23 13:00:46,173 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1760/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e020d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,174 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e031d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1761/click
+2025-09-23 13:00:46,174 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0d990>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1761/click
+2025-09-23 13:00:46,175 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0d390>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1761/click
+2025-09-23 13:00:46,176 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1761/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0ca10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,178 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0f6d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1770/click
+2025-09-23 13:00:46,181 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e03110>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1770/click
+2025-09-23 13:00:46,181 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e038d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1770/click
+2025-09-23 13:00:46,182 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1770/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e01a50>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,184 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e00c50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1771/click
+2025-09-23 13:00:46,189 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e021d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1771/click
+2025-09-23 13:00:46,190 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103974ed0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1771/click
+2025-09-23 13:00:46,192 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1771/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a07a10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,194 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a07710>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1772/click
+2025-09-23 13:00:46,195 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a06a90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1772/click
+2025-09-23 13:00:46,196 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103965210>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1772/click
+2025-09-23 13:00:46,197 - ERROR - Error processing item: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/element/f.A174BC1038B72BFC6CCD60570C2A01FF.d.DA744E73F04653AB49A69F2EEA18469F.e.1772/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103983290>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,197 - INFO - Moving to next page
+2025-09-23 13:00:46,198 - INFO - Processing page at index 100
+2025-09-23 13:00:46,200 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103981e10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/url
+2025-09-23 13:00:46,202 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0ed10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/url
+2025-09-23 13:00:46,203 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0d110>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99/url
+2025-09-23 13:00:46,204 - ERROR - Worker process error: HTTPConnectionPool(host='localhost', port=51178): Max retries exceeded with url: /session/4b9b5f86a223550e054da91436ec7f99/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103e0e950>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-23 13:00:46,208 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103292910>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99
+2025-09-23 13:00:46,209 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103965350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99
+2025-09-23 13:00:46,210 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103995350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99
+2025-09-23 13:00:46,232 - INFO - LinkedIn scraping completed
