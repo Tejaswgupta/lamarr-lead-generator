@@ -417,3 +417,8 @@ Stacktrace:
 2025-09-23 13:00:46,209 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103965350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99
 2025-09-23 13:00:46,210 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103995350>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/4b9b5f86a223550e054da91436ec7f99
 2025-09-23 13:00:46,232 - INFO - LinkedIn scraping completed
+2025-10-18 15:27:03,338 - INFO - Starting LinkedIn Lead Generator with Prisma ORM
+2025-10-18 15:34:06,857 - INFO - Starting LinkedIn Lead Generator with Prisma ORM
+2025-10-18 15:34:07,059 - INFO - HTTP Request: GET http://localhost:62550/status "HTTP/1.1 200 OK"
+2025-10-18 15:34:07,059 - INFO - Successfully connected to database via Prisma
+2025-10-18 15:34:12,444 - INFO - Starting LinkedIn login

@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id             Int      @id @default(autoincrement())
+  name           String   @db.VarChar(255)
+  linkedinUrl    String?  @unique @db.VarChar(500)
+  location       String?  @db.VarChar(255)
+  companyDomain  String?  @unique @db.VarChar(255)
+  metadata       Json?
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  jobs           Job[]
+  recruiters     Recruiter[]
+
+  @@map("companies")
+}
+
+model Recruiter {
+  id                      Int       @id @default(autoincrement())
+  name                    String    @db.VarChar(255)
+  linkedinUrl             String?   @unique @db.VarChar(500)
+  companyDomain           String?   @db.VarChar(255)
+  email                   String?   @db.VarChar(255)
+  firstEmail              DateTime? @map("first_email")
+  lastEmail               DateTime? @map("last_email")
+  emailCount              Int       @default(0) @map("email_count")
+  apolloSequenceStatus    String    @default("pending") @map("apollo_sequence_status") @db.VarChar(50)
+  apolloSequenceAddedAt   DateTime? @map("apollo_sequence_added_at")
+  apolloSequenceId        String?   @map("apollo_sequence_id") @db.VarChar(100)
+  createdAt               DateTime  @default(now()) @map("created_at")
+  updatedAt               DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  company                 Company?  @relation(fields: [companyDomain], references: [companyDomain])
+  jobs                    Job[]
+
+  @@map("recruiters")
+}
+
+model Job {
+  id           BigInt   @id @map("id")
+  companyId    Int?     @map("company_id")
+  recruiterId  Int?     @map("recruiter_id")
+  title        String?  @db.VarChar(500)
+  description  String?
+  roleMetadata Json?    @map("role_metadata")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  // Relations
+  company      Company?  @relation(fields: [companyId], references: [id], onDelete: SetNull)
+  recruiter    Recruiter? @relation(fields: [recruiterId], references: [id], onDelete: SetNull)
+
+  @@map("linkedin_jobs")
+}
+
+model ProcessingLog {
+  id             Int      @id @default(autoincrement())
+  jobId          BigInt?  @map("job_id")
+  recruiterId    Int?     @map("recruiter_id")
+  status         String?  @db.VarChar(50)
+  errorMessage   String?  @map("error_message")
+  processingTime Float?   @map("processing_time")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  @@map("processing_logs")
+}

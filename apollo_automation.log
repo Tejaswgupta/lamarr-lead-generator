@@ -1,0 +1,25 @@
+2025-10-18 22:07:32,056 - INFO - Starting Apollo.io automation with Prisma ORM
+2025-10-18 22:07:32,198 - INFO - HTTP Request: GET http://localhost:51662/status "HTTP/1.1 200 OK"
+2025-10-18 22:07:32,198 - INFO - Successfully connected to database via Prisma
+2025-10-18 22:07:32,922 - INFO - patching driver executable /Users/tejasw/Library/Application Support/undetected_chromedriver/undetected_chromedriver
+2025-10-18 22:07:42,712 - INFO - Starting Apollo.io login
+2025-10-18 22:07:54,481 - INFO - APOLLO LOGIN INSTRUCTIONS
+2025-10-18 22:07:54,488 - INFO - ==================================================
+2025-10-18 22:07:54,489 - INFO - Please complete the login process manually in the browser:
+2025-10-18 22:07:54,489 - INFO - 
+2025-10-18 22:07:54,489 - INFO - STEPS:
+2025-10-18 22:07:54,489 - INFO -    1. Check 'Verify you are human' checkbox
+2025-10-18 22:07:54,489 - INFO -    2. Enter email: tejasw@thevotum.com
+2025-10-18 22:07:54,489 - INFO -    3. Enter password from your .env file
+2025-10-18 22:07:54,489 - INFO -    4. If error popup appears, close it and try again
+2025-10-18 22:07:54,489 - INFO -    5. Complete any additional verification if needed
+2025-10-18 22:07:54,489 - INFO -    6. Wait until you see the Apollo dashboard
+2025-10-18 22:07:54,489 - INFO - 
+2025-10-18 22:07:54,489 - INFO - TIP: If verification fails, try:
+2025-10-18 22:07:54,489 - INFO -    • Refresh the page (F5)
+2025-10-18 22:07:54,489 - INFO -    • Use a different browser tab
+2025-10-18 22:07:54,489 - INFO -    • Wait a few minutes and try again
+2025-10-18 22:07:54,489 - INFO - 
+2025-10-18 22:07:56,497 - ERROR - Apollo automation error: EOF when reading a line
+2025-10-18 22:07:56,591 - INFO - Successfully disconnected from database
+2025-10-18 22:07:56,591 - INFO - Apollo automation finished

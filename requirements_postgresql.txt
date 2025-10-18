@@ -1,9 +1,11 @@
-# Requirements for main_1.py and apollo_1.py with PostgreSQL
+# Requirements for main.py and apollo.py with PostgreSQL + Prisma
 selenium>=4.0.0
 webdriver-manager>=3.8.0
 python-dotenv>=0.19.0
-asyncpg>=0.28.0
 aiofiles>=0.8.0
+
+# Prisma ORM
+prisma>=5.0.0
 
 # Optional dependencies
 psycopg2-binary>=2.9.0  # Alternative PostgreSQL adapter

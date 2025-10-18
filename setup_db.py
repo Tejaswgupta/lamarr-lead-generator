@@ -8,24 +8,24 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-print(os.getenv('DB_NAME'))
 
 DB_CONFIG = {
     'host': os.getenv('DB_HOST', 'localhost'),
-    'port': os.getenv('DB_PORT', 5432),
-    'database': os.getenv('DB_NAME', 'lead_generator'),
+    'port': int(os.getenv('DB_PORT', '5432')),
+    'database': os.getenv('DB_NAME', 'postgres'),
     'user': os.getenv('DB_USER', 'postgres'),
-    'password': os.getenv('DB_PASSWORD', 'password')
+    'password': os.getenv('DB_PASSWORD', 'Abcd$1234')
 }
+
 
 async def setup_database():
     """Setup database tables"""
     try:
         # Connect to PostgreSQL
         conn = await asyncpg.connect(**DB_CONFIG)
-        
+
         print("Creating database tables...")
-        
+
         # Create companies table
         await conn.execute('''
             CREATE TABLE IF NOT EXISTS companies (
@@ -39,7 +39,7 @@ async def setup_database():
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-        
+
         # Create recruiters table
         await conn.execute('''
             CREATE TABLE IF NOT EXISTS recruiters (
@@ -58,7 +58,7 @@ async def setup_database():
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-        
+
         # Create linkedin_jobs table
         await conn.execute('''
             CREATE TABLE IF NOT EXISTS linkedin_jobs (
@@ -71,7 +71,7 @@ async def setup_database():
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-        
+
         # Create processing_logs table for tracking
         await conn.execute('''
             CREATE TABLE IF NOT EXISTS processing_logs (
@@ -84,7 +84,7 @@ async def setup_database():
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-        
+
         # Create indexes for better performance
         await conn.execute('''
             CREATE INDEX IF NOT EXISTS idx_companies_linkedin_url ON companies(linkedin_url);
@@ -96,7 +96,7 @@ async def setup_database():
             CREATE INDEX IF NOT EXISTS idx_jobs_recruiter ON linkedin_jobs(recruiter_id);
             CREATE INDEX IF NOT EXISTS idx_logs_recruiter ON processing_logs(recruiter_id);
         ''')
-        
+
         # Create a function to get recruiters with job info
         await conn.execute('''
             CREATE OR REPLACE FUNCTION get_recruiters_with_job_info()
@@ -133,10 +133,10 @@ async def setup_database():
             END;
             $$ LANGUAGE plpgsql;
         ''')
-        
+
         await conn.close()
         print("Database setup completed successfully!")
-        
+
         # Print table information
         print("\nCreated tables:")
         print("1. companies - Stores company information")
@@ -144,8 +144,8 @@ async def setup_database():
         print("3. linkedin_jobs - Stores job posting information")
         print("4. processing_logs - Stores processing logs and errors")
         print("\nDatabase is ready for use!")
-        
-    except Exception as e:
+
+    except (asyncpg.PostgresError, ConnectionError, OSError) as e:
         print(f"Database setup failed: {e}")
         return False
 
@@ -157,5 +157,5 @@ if __name__ == "__main__":
     print(f"Database: {DB_CONFIG['database']}")
     print(f"User: {DB_CONFIG['user']}")
     print()
-    
+
     asyncio.run(setup_database())

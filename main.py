@@ -1,5 +1,5 @@
 # %%
-# LinkedIn Lead Generator with Local PostgreSQL
+# LinkedIn Lead Generator with Local PostgreSQL + Prisma ORM
 import os
 import time
 import json
@@ -19,10 +19,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
-import asyncpg  # PostgreSQL database connector
+from prisma import Prisma
+from prisma.models import Company, Recruiter, Job, ProcessingLog
 
 # Load environment variables from .env file
 load_dotenv(override=True)
+
+# Ensure DATABASE_URL is set for Prisma
+if not os.getenv('DATABASE_URL'):
+    # Construct DATABASE_URL from individual DB_* variables
+    DATABASE_URL = f"postgresql://{os.getenv('DB_USER', 'postgres')}:{os.getenv('DB_PASSWORD', 'password')}@{os.getenv('DB_HOST', 'localhost')}:{os.getenv('DB_PORT', 5432)}/{os.getenv('DB_NAME', 'lead_generator')}"
+    os.environ['DATABASE_URL'] = DATABASE_URL
 
 # Setup logging
 logging.basicConfig(
@@ -35,14 +42,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Database configuration
-DB_CONFIG = {
-    'host': os.getenv('DB_HOST', 'localhost'),
-    'port': os.getenv('DB_PORT', 5432),
-    'database': os.getenv('DB_NAME', 'lead_generator'),
-    'user': os.getenv('DB_USER', 'postgres'),
-    'password': os.getenv('DB_PASSWORD', 'password')
-}
+# Global Prisma client instance
+prisma_client = Prisma()
 
 # %%
 def safe_find_element(driver, tag_or_css, css=None):
@@ -75,164 +76,127 @@ def extract_name(profile_text):
     
     return name.strip()
 
-async def get_db_connection():
-    """Get database connection"""
+async def setup_database():
+    """Setup database connection and create Prisma client"""
     try:
-        conn = await asyncpg.connect(**DB_CONFIG)
-        return conn
+        # Connect to Prisma
+        await prisma_client.connect()
+        logger.info("Successfully connected to database via Prisma")
+        return True
     except Exception as e:
         logger.error(f"Database connection failed: {e}")
-        return None
-
-async def setup_database():
-    """Setup database tables"""
-    conn = await get_db_connection()
-    if not conn:
         return False
-    
+
+async def disconnect_database():
+    """Disconnect from database"""
     try:
-        # Create companies table
-        await conn.execute('''
-            CREATE TABLE IF NOT EXISTS companies (
-                id SERIAL PRIMARY KEY,
-                name VARCHAR(255) NOT NULL,
-                linkedin_url VARCHAR(500) UNIQUE,
-                location VARCHAR(255),
-                company_domain VARCHAR(255),
-                metadata JSONB,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        
-        # Create recruiters table
-        await conn.execute('''
-            CREATE TABLE IF NOT EXISTS recruiters (
-                id SERIAL PRIMARY KEY,
-                name VARCHAR(255) NOT NULL,
-                linkedin_url VARCHAR(500) UNIQUE,
-                company_domain VARCHAR(255),
-                email VARCHAR(255),
-                first_email TIMESTAMP,
-                last_email TIMESTAMP,
-                email_count INTEGER DEFAULT 0,
-                apollo_sequence_status VARCHAR(50) DEFAULT 'pending',
-                apollo_sequence_added_at TIMESTAMP,
-                apollo_sequence_id VARCHAR(100),
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        
-        # Create linkedin_jobs table
-        await conn.execute('''
-            CREATE TABLE IF NOT EXISTS linkedin_jobs (
-                id BIGINT PRIMARY KEY,
-                company_id INTEGER REFERENCES companies(id),
-                recruiter_id INTEGER REFERENCES recruiters(id),
-                title VARCHAR(500),
-                description TEXT,
-                role_metadata JSONB,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        
-        # Create processing_logs table for tracking
-        await conn.execute('''
-            CREATE TABLE IF NOT EXISTS processing_logs (
-                id SERIAL PRIMARY KEY,
-                job_id BIGINT,
-                recruiter_id INTEGER,
-                status VARCHAR(50),
-                error_message TEXT,
-                processing_time FLOAT,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
-        
-        logger.info("Database tables created successfully")
-        await conn.close()
-        return True
-        
+        await prisma_client.disconnect()
+        logger.info("Successfully disconnected from database")
     except Exception as e:
-        logger.error(f"Database setup failed: {e}")
-        if conn:
-            await conn.close()
-        return False
+        logger.error(f"Database disconnection failed: {e}")
 
-async def insert_data(company_name, company_location, company_url, title, role_meta, 
-                     hiring_manager_name, hiring_manager_linkedin_url, job_details, 
+async def insert_data(company_name, company_location, company_url, title, role_meta,
+                     hiring_manager_name, hiring_manager_linkedin_url, job_details,
                      job_id, company_domain, company_details):
-    """Insert scraped data into database"""
-    conn = await get_db_connection()
-    if not conn:
-        return False
-    
+    """Insert scraped data into database using Prisma ORM"""
     try:
         company_url = company_url.replace("/about", "")
-        
+
+        # Parse company details JSON if it's a string
+        if isinstance(company_details, str):
+            company_details = json.loads(company_details)
+
         # First check if company exists by LinkedIn URL
-        company_row = await conn.fetchrow(
-            "SELECT id FROM companies WHERE linkedin_url = $1", company_url
+        company = await prisma_client.company.find_first(
+            where={'linkedinUrl': company_url}
         )
-        
-        if not company_row and company_domain:
+
+        if not company and company_domain:
             # Check by domain if not found by LinkedIn URL
-            company_row = await conn.fetchrow(
-                "SELECT id FROM companies WHERE company_domain = $1", company_domain
+            company = await prisma_client.company.find_first(
+                where={'companyDomain': company_domain}
             )
-        
-        if not company_row:
-            # Insert new company
-            company_id = await conn.fetchval('''
-                INSERT INTO companies (name, linkedin_url, location, company_domain, metadata)
-                VALUES ($1, $2, $3, $4, $5) RETURNING id
-            ''', company_name, company_url, company_location, company_domain, company_details)
+
+        if not company:
+            # Create new company
+            company = await prisma_client.company.create(
+                data={
+                    'name': company_name,
+                    'linkedinUrl': company_url,
+                    'location': company_location,
+                    'companyDomain': company_domain,
+                    'metadata': company_details
+                }
+            )
+            logger.info(f"Created new company: {company_name} (ID: {company.id})")
         else:
-            company_id = company_row['id']
             # Update existing company if we have new information
             if company_domain:
-                await conn.execute('''
-                    UPDATE companies SET company_domain = $1, metadata = $2, updated_at = CURRENT_TIMESTAMP
-                    WHERE id = $3
-                ''', company_domain, company_details, company_id)
-        
+                company = await prisma_client.company.update(
+                    where={'id': company.id},
+                    data={
+                        'companyDomain': company_domain,
+                        'metadata': company_details
+                    }
+                )
+                logger.info(f"Updated existing company: {company_name} (ID: {company.id})")
+
         recruiter_id = None
         if hiring_manager_name and hiring_manager_linkedin_url:
             # Check if recruiter exists
-            recruiter_row = await conn.fetchrow(
-                "SELECT id FROM recruiters WHERE linkedin_url = $1", hiring_manager_linkedin_url
+            recruiter = await prisma_client.recruiter.find_first(
+                where={'linkedinUrl': hiring_manager_linkedin_url}
             )
-            
-            if recruiter_row:
-                recruiter_id = recruiter_row['id']
+
+            if recruiter:
+                recruiter_id = recruiter.id
                 # Update recruiter info
-                await conn.execute('''
-                    UPDATE recruiters SET name = $1, company_domain = $2, updated_at = CURRENT_TIMESTAMP
-                    WHERE id = $3
-                ''', hiring_manager_name, company_domain, recruiter_id)
+                await prisma_client.recruiter.update(
+                    where={'id': recruiter.id},
+                    data={
+                        'name': hiring_manager_name,
+                        'companyDomain': company_domain
+                    }
+                )
+                logger.info(f"Updated existing recruiter: {hiring_manager_name} (ID: {recruiter.id})")
             else:
-                # Insert new recruiter
-                recruiter_id = await conn.fetchval('''
-                    INSERT INTO recruiters (name, linkedin_url, company_domain)
-                    VALUES ($1, $2, $3) RETURNING id
-                ''', hiring_manager_name, hiring_manager_linkedin_url, company_domain)
-        
-        # Insert job data
-        await conn.execute('''
-            INSERT INTO linkedin_jobs (id, company_id, recruiter_id, title, description, role_metadata)
-            VALUES ($1, $2, $3, $4, $5, $6)
-            ON CONFLICT (id) DO NOTHING
-        ''', int(job_id), company_id, recruiter_id, title, job_details, json.dumps(role_meta))
-        
-        logger.info(f"Successfully inserted job {job_id} for company {company_name}")
-        await conn.close()
+                # Create new recruiter
+                recruiter = await prisma_client.recruiter.create(
+                    data={
+                        'name': hiring_manager_name,
+                        'linkedinUrl': hiring_manager_linkedin_url,
+                        'companyDomain': company_domain
+                    }
+                )
+                recruiter_id = recruiter.id
+                logger.info(f"Created new recruiter: {hiring_manager_name} (ID: {recruiter.id})")
+
+        # Check if job already exists
+        existing_job = await prisma_client.job.find_unique(
+            where={'id': int(job_id)}
+        )
+
+        if not existing_job:
+            # Create new job
+            await prisma_client.job.create(
+                data={
+                    'id': int(job_id),
+                    'companyId': company.id,
+                    'recruiterId': recruiter_id,
+                    'title': title,
+                    'description': job_details,
+                    'roleMetadata': role_meta
+                }
+            )
+            logger.info(f"Created new job: {job_id} for company {company_name}")
+        else:
+            logger.info(f"Job {job_id} already exists, skipping")
+
         return True
-        
+
     except Exception as e:
         logger.error(f"Data insertion failed for job {job_id}: {e}")
-        if conn:
-            await conn.close()
+        traceback.print_exc()
         return False
 
 def extract_company_details(driver):
@@ -272,18 +236,7 @@ def extract_company_details(driver):
 async def write_data(driver, job_id):
     """Process and write job data"""
     start_time = time.time()
-    
-    # Check if job exists (commented out database check)
-    """
-    conn = await get_db_connection()
-    if conn:
-        existing_job = await conn.fetchrow("SELECT id FROM linkedin_jobs WHERE id = $1", int(job_id))
-        await conn.close()
-        if existing_job:
-            logger.info(f'Job ID {job_id} already exists, skipping')
-            return
-    """
-    
+
     logger.info(f'Processing job ID: {job_id}')
     
     try:
@@ -356,6 +309,9 @@ async def write_data(driver, job_id):
             "applicants": applicants
         }
 
+        # Convert role_meta to JSON string for Prisma
+        role_meta_json = json.dumps(role_meta)
+
         # Extract hiring manager info
         hiring_manager_element = safe_find_element(
             driver, By.CLASS_NAME, 'hirer-card__hirer-information')
@@ -374,8 +330,8 @@ async def write_data(driver, job_id):
 
         # Insert data into database
         success = await insert_data(
-            company_name, company_location, company_url, title, role_meta, 
-            hiring_manager_name, hiring_manager_linkedin_url, job_details, 
+            company_name, company_location, company_url, title, role_meta_json,
+            hiring_manager_name, hiring_manager_linkedin_url, job_details,
             job_id, company_domain, company_details
         )
         
@@ -521,21 +477,21 @@ async def worker_process(driver, start_url, item_count):
 
 async def main():
     """Main function to run the scraper"""
-    logger.info("Starting LinkedIn Lead Generator")
-    
-    # Setup database
+    logger.info("Starting LinkedIn Lead Generator with Prisma ORM")
+
+    # Setup database connection
     if not await setup_database():
         logger.error("Database setup failed, exiting")
         return
-    
+
     # Setup Brave driver
     brave_options = Options()
     # brave_options.add_argument("--headless=new")  # Uncomment for headless mode
     brave_options.binary_location = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-    
+
     # Use Chrome driver with Brave browser
     driver = webdriver.Chrome(options=brave_options)
-    
+
     try:
         login(driver)
         check_for_captcha(driver=driver)
@@ -554,14 +510,19 @@ async def main():
         for url in urls:
             logger.info(f"Processing URL: {url}")
             await worker_process(driver, url, 0)
-            
+
     finally:
         # Clean up stop file if it exists
         if os.path.exists("STOP_SCRAPING"):
             os.remove("STOP_SCRAPING")
             logger.info("Removed stop file")
-            
+
+        # Close browser
         driver.quit()
+
+        # Disconnect from database
+        await disconnect_database()
+
         logger.info("LinkedIn scraping completed")
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 # %%
-# Apollo.io Automation with Local PostgreSQL and Batch Processing
+# Apollo.io Automation with Local PostgreSQL and Prisma ORM
 import os
 import time
 import json
@@ -18,11 +18,18 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
-import asyncpg  # PostgreSQL database connector
+from prisma import Prisma
+from prisma.models import Recruiter, Company, Job, ProcessingLog
 import undetected_chromedriver as uc  # Working Cloudflare bypass
 
 # Load environment variables
 load_dotenv(override=True)
+
+# Ensure DATABASE_URL is set for Prisma
+if not os.getenv('DATABASE_URL'):
+    # Construct DATABASE_URL from individual DB_* variables
+    DATABASE_URL = f"postgresql://{os.getenv('DB_USER', 'postgres')}:{os.getenv('DB_PASSWORD', 'password')}@{os.getenv('DB_HOST', 'localhost')}:{os.getenv('DB_PORT', 5432)}/{os.getenv('DB_NAME', 'lead_generator')}"
+    os.environ['DATABASE_URL'] = DATABASE_URL
 
 # Setup logging with UTF-8 encoding
 logging.basicConfig(
@@ -40,15 +47,8 @@ BATCH_SIZE = 10
 SEQUENCE_DELAY = 5  # seconds between sequence additions
 DEFAULT_SEQUENCE_NAME = "Default Lead Sequence"  # Configure this as needed
 
-# Database configuration (commented out for now)
-
-DB_CONFIG = {
-    'host': os.getenv('DB_HOST', 'localhost'),
-    'port': os.getenv('DB_PORT', 5432),
-    'database': os.getenv('DB_NAME', 'lead_generator'),
-    'user': os.getenv('DB_USER', 'postgres'),
-    'password': os.getenv('DB_PASSWORD', 'password')
-}
+# Global Prisma client instance
+prisma_client = Prisma()
 
 def calculate_name_match(expected_name, found_name):
     """Calculate similarity between expected and found person names"""
@@ -85,108 +85,104 @@ def calculate_name_match(expected_name, found_name):
 
 
 # %%
-async def get_db_connection():
-    """Get database connection"""
+async def setup_database():
+    """Setup database connection and create Prisma client"""
     try:
-        conn = await asyncpg.connect(**DB_CONFIG)
-        return conn
+        # Connect to Prisma
+        await prisma_client.connect()
+        logger.info("Successfully connected to database via Prisma")
+        return True
     except Exception as e:
         logger.error(f"Database connection failed: {e}")
-        return None
+        return False
+
+async def disconnect_database():
+    """Disconnect from database"""
+    try:
+        await prisma_client.disconnect()
+        logger.info("Successfully disconnected from database")
+    except Exception as e:
+        logger.error(f"Database disconnection failed: {e}")
 
 
 
 async def fetch_pending_recruiters():
-    """Fetch recruiters that haven't been added to Apollo sequences"""
-   
-    conn = await get_db_connection()
-    if not conn:
-        return []
-    
+    """Fetch recruiters that haven't been added to Apollo sequences using Prisma ORM"""
     try:
         # Get recruiters with company and job information who haven't been processed
-        query = '''
-        SELECT DISTINCT 
-            r.id as recruiter_id,
-            r.name,
-            r.company_domain,
-            c.name as company_name,
-            r.apollo_sequence_status,
-            r.apollo_sequence_added_at,
-            r.created_at,
-            COUNT(lj.id) as job_count
-        FROM recruiters r
-        LEFT JOIN companies c ON r.company_domain = c.company_domain
-        LEFT JOIN linkedin_jobs lj ON r.id = lj.recruiter_id
-        WHERE r.apollo_sequence_status IN ('pending', 'failed') 
-            AND r.company_domain IS NOT NULL
-            AND r.name IS NOT NULL
-        GROUP BY r.id, r.name, r.company_domain, c.name, r.apollo_sequence_status, r.apollo_sequence_added_at, r.created_at
-        ORDER BY r.created_at DESC
-        '''
-        
-        rows = await conn.fetch(query)
-        await conn.close()
-        
-        recruiters = []
-        for row in rows:
-            recruiters.append({
-                'recruiter_id': row['recruiter_id'],
-                'name': row['name'],
-                'company_domain': row['company_domain'],
-                'company_name': row['company_name'],
-                'status': row['apollo_sequence_status'],
-                'job_count': row['job_count']
+        recruiters = await prisma_client.recruiter.find_many(
+            where={
+                'apolloSequenceStatus': {
+                    'in': ['pending', 'failed']
+                },
+                'companyDomain': {
+                    'not': None
+                },
+                'name': {
+                    'not': None
+                }
+            },
+            include={
+                'company': True,
+                'jobs': True
+            },
+            order={
+                'createdAt': 'desc'
+            }
+        )
+
+        # Format the results to match expected structure
+        result = []
+        for recruiter in recruiters:
+            result.append({
+                'recruiter_id': recruiter.id,
+                'name': recruiter.name,
+                'company_domain': recruiter.companyDomain,
+                'company_name': recruiter.company.name if recruiter.company else None,
+                'status': recruiter.apolloSequenceStatus,
+                'job_count': len(recruiter.jobs) if recruiter.jobs else 0
             })
-        
-        logger.info(f"Found {len(recruiters)} pending recruiters")
-        return recruiters
-        
+
+        logger.info(f"Found {len(result)} pending recruiters")
+        return result
+
     except Exception as e:
         logger.error(f"Error fetching pending recruiters: {e}")
-        if conn:
-            await conn.close()
         return []
 
 async def update_recruiter_status(recruiter_id, status, sequence_id=None, error_message=None):
-    """Update recruiter's Apollo sequence status"""
-    
-    conn = await get_db_connection()
-    if not conn:
-        return False
-    
+    """Update recruiter's Apollo sequence status using Prisma ORM"""
     try:
-        update_fields = {
-            'apollo_sequence_status': status,
-            'updated_at': datetime.now()
+        # Prepare update data
+        update_data = {
+            'apolloSequenceStatus': status
         }
-        
+
         if status == 'success':
-            update_fields['apollo_sequence_added_at'] = datetime.now()
+            update_data['apolloSequenceAddedAt'] = datetime.now()
             if sequence_id:
-                update_fields['apollo_sequence_id'] = sequence_id
-        
-        # Build the query dynamically
-        set_clause = ', '.join([f"{key} = ${i+2}" for i, key in enumerate(update_fields.keys())])
-        query = f"UPDATE recruiters SET {set_clause} WHERE id = $1"
-        
-        values = [recruiter_id] + list(update_fields.values())
-        await conn.execute(query, *values)
-        
-        # Log the update
-        await conn.execute('''
-            INSERT INTO processing_logs (recruiter_id, status, error_message, created_at)
-            VALUES ($1, $2, $3, $4)
-        ''', recruiter_id, status, error_message, datetime.now())
-        
-        await conn.close()
+                update_data['apolloSequenceId'] = sequence_id
+
+        # Update recruiter status
+        await prisma_client.recruiter.update(
+            where={'id': recruiter_id},
+            data=update_data
+        )
+
+        # Log the update in processing_logs
+        await prisma_client.processingLog.create(
+            data={
+                'recruiterId': recruiter_id,
+                'status': status,
+                'errorMessage': error_message
+            }
+        )
+
         logger.info(f"Updated recruiter {recruiter_id} status to {status}")
         return True
-        
+
     except Exception as e:
         logger.error(f"Error updating recruiter status: {e}")
-        if conn:
-            await conn.close()
         return False
 
 def login(driver):
@@ -1548,70 +1544,80 @@ async def process_recruiter_batch(driver, recruiters_batch):
     return success_count, failed_count
 
 async def main():
-    """Main function to run Apollo automation"""
-    logger.info("Starting Apollo.io automation")
-    
+    """Main function to run Apollo automation with Prisma ORM"""
+    logger.info("Starting Apollo.io automation with Prisma ORM")
+
+    # Setup database connection
+    if not await setup_database():
+        logger.error("Database setup failed, exiting")
+        return
+
     # Setup undetected Chrome driver (same as working test)
     options = uc.ChromeOptions()
     options.add_argument("--start-maximized")
-    
+
     # This driver is specifically designed to bypass Cloudflare
     driver = uc.Chrome(options=options)
-    
+
     try:
         # Login to Apollo
         login_success = login(driver)
         if not login_success:
             logger.error("Login failed, exiting automation")
             return
-        
+
         # Fetch pending recruiters
         pending_recruiters = await fetch_pending_recruiters()
-        
+
         if not pending_recruiters:
             logger.info("No pending recruiters found")
             return
-        
+
         logger.info(f"Found {len(pending_recruiters)} recruiters to process")
-        
+
         # Process in batches
         total_success = 0
         total_failed = 0
-        
+
         for i in range(0, len(pending_recruiters), BATCH_SIZE):
             batch = pending_recruiters[i:i+BATCH_SIZE]
             batch_num = (i // BATCH_SIZE) + 1
             total_batches = (len(pending_recruiters) + BATCH_SIZE - 1) // BATCH_SIZE
-            
+
             logger.info(f"Processing batch {batch_num}/{total_batches}")
-            
+
             # Manual confirmation for each batch
             print(f"\nBatch {batch_num}/{total_batches} contains {len(batch)} recruiters:")
             for j, recruiter in enumerate(batch):
                 print(f"  {j+1}. {recruiter['name']} - {recruiter['company_name']} ({recruiter['job_count']} jobs)")
-            
+
             proceed = input(f"\nProceed with batch {batch_num}? (y/n): ").lower().strip()
             if proceed != 'y':
                 logger.info(f"Skipping batch {batch_num} by user request")
                 continue
-            
+
             # Process the batch
             success, failed = await process_recruiter_batch(driver, batch)
             total_success += success
             total_failed += failed
-            
+
             # Wait between batches (except for the last one)
             if i + BATCH_SIZE < len(pending_recruiters):
                 logger.info(f"Waiting {SEQUENCE_DELAY * 2} seconds between batches...")
                 time.sleep(SEQUENCE_DELAY * 2)
-        
+
         logger.info(f"Apollo automation completed: {total_success} successful, {total_failed} failed")
-        
+
     except Exception as e:
         logger.error(f"Apollo automation error: {e}")
-        
+
     finally:
+        # Close browser
         driver.quit()
+
+        # Disconnect from database
+        await disconnect_database()
+
         logger.info("Apollo automation finished")
 
 if __name__ == "__main__":

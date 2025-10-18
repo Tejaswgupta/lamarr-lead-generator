@@ -1,0 +1,18 @@
+{
+  "name": "linkedin-lead-generator",
+  "version": "1.0.0",
+  "description": "LinkedIn lead generation system with PostgreSQL and Prisma ORM",
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "setup": "python setup_prisma.py"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
